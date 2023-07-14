@@ -4,6 +4,11 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PizzaPan.Business.Abstract;
+using PizzaPan.Business.Concrete;
+using PizzaPan.DataAccess.Abstract;
+using PizzaPan.DataAccess.Concrete;
+using PizzaPan.DataAccess.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +28,21 @@ namespace PizzaPan.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Context>();
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
+
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EfContactDal>();
+
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductDal, EfProductDal>();
+
+            services.AddScoped<ITestimonialsService, TestimonialManager>();
+            services.AddScoped<ITestimonialDal, EfTestimonial>();
+
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
