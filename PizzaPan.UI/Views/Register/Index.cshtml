@@ -2,30 +2,62 @@
 @{
     Layout = null;
 }
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kayıt Ol Sayfası</title>
 
-<form method="post">
-    <div class="container">
-        <br />
-        <label>Adınız</label>
-        <input type="text" class="form-control" asp-for="Name" />
-        <br />
-        <label>Soyadınız</label>
-        <input type="text" class="form-control" asp-for="Surname" />
-        <br />
-        <label>Kullanıcı Adınız</label>
-        <input type="text" class="form-control" asp-for="Username" />
-        <br />
-        <label>Email Adresiniz</label>
-        <input type="email" class="form-control" asp-for="Email" />
-        <br />
-        <label>Şifreniz</label>
-        <input type="password" class="form-control" asp-for="Password" />
-        <br />
-        <label>Şifreniz Tekrar</label>
-        <input type="password" class="form-control" asp-for="ConfirmPassword" />
-        <br />
-        <button class="btn btn-primary">Kayıt Ol</button>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/colorlib-regform-9/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/colorlib-regform-9/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST" id="signup-form" class="signup-form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" asp-for="Name" placeholder="Adınız" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" asp-for="Surname" placeholder="Soyadınız" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" asp-for="Username" placeholder="Kullanıcı Adınız" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" asp-for="Email" placeholder="Email Adresiniz" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input"  asp-for="Password" id="password" placeholder="Şifreniz" />
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" asp-for="ConfirmPassword" id="confirmPassword" placeholder="Şifreniz Tekrar" />
+                        <span toggle="#confirmPassword" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit submit" value="Kayıt Ol" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
-</form>
+
+    <!-- JS -->
+    <script src="~/colorlib-regform-9/vendor/jquery/jquery.min.js"></script>
+    <script src="~/colorlib-regform-9/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
