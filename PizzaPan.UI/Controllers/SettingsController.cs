@@ -39,7 +39,7 @@ namespace PizzaPan.UI.Controllers
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "SignIn");
+                return RedirectToAction("Index", "Login");
             }
             return View();
         }

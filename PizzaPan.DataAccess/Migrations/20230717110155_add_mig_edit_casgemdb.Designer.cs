@@ -10,8 +10,8 @@ using PizzaPan.DataAccess.Concrete;
 namespace PizzaPan.DataAccess.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230714142300_mig_add_identity")]
-    partial class mig_add_identity
+    [Migration("20230717110155_add_mig_edit_casgemdb")]
+    partial class add_mig_edit_casgemdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -168,6 +168,9 @@ namespace PizzaPan.DataAccess.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ConfirimCode")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -267,6 +270,30 @@ namespace PizzaPan.DataAccess.Migrations
                     b.HasKey("ContactID");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("PizzaPan.Entities.Concrete.Discount", b =>
+                {
+                    b.Property<int>("DiscountID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DiscountCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DiscountCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndingDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("DiscountID");
+
+                    b.ToTable("Discounts");
                 });
 
             modelBuilder.Entity("PizzaPan.Entities.Concrete.Product", b =>

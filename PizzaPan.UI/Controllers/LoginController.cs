@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PizzaPan.UI.Controllers
 {
-    public class SignInController : Controller
+    public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
 
-        public SignInController(SignInManager<AppUser> signInManager)
+        public LoginController(SignInManager<AppUser> signInManager)
         {
             _signInManager = signInManager;
         }

@@ -12,5 +12,7 @@ namespace PizzaPan.Entities.Concrete
         public string Name { get; set; }
         public string Surname { get; set; }
         public string City { get; set; }
+        public int? ConfirimCode { get; set; }
+
     }
 }
