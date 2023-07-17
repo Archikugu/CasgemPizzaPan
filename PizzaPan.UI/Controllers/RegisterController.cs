@@ -40,28 +40,8 @@ namespace PizzaPan.UI.Controllers
             if (result.Succeeded)
             {
                 #region
-                MimeMessage mimeMessage = new MimeMessage();
-                MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "engokhangok@gmail.com");
-                mimeMessage.From.Add(mailboxAddressFrom);
-
-                MailboxAddress mailboxAddressTo = new MailboxAddress("User", registerViewModel.Email);
-                mimeMessage.To.Add(mailboxAddressTo);
-
-                var bodyBuilder = new BodyBuilder();
-                bodyBuilder.TextBody = "Giriş Yapabilmek İçin Onay Kodunuz: " + x;
-                mimeMessage.Body = bodyBuilder.ToMessageBody();
-
-                mimeMessage.Subject = "Doğrulama Kodu:";
-
-                SmtpClient smtpClient = new SmtpClient();
-                smtpClient.Connect("smtp.gmail.com", 587, false);
-                smtpClient.Authenticate("engokhangok@gmail.com", "ehhijhfqtwcgoaab");
-                smtpClient.Send(mimeMessage);
-                smtpClient.Disconnect(true);
-
+                SendMail(registerViewModel, x);
                 #endregion
-
-
 
                 TempData["Username"] = appUser.UserName;
                 return RedirectToAction("Index", "ConfirmMail");
@@ -75,6 +55,27 @@ namespace PizzaPan.UI.Controllers
             }
             return View();
 
+        }
+        private static void SendMail(RegisterViewModel registerViewModel, int x)
+        {
+            MimeMessage mimeMessage = new MimeMessage();
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "engokhangok@gmail.com");
+            mimeMessage.From.Add(mailboxAddressFrom);
+
+            MailboxAddress mailboxAddressTo = new MailboxAddress("User", registerViewModel.Email);
+            mimeMessage.To.Add(mailboxAddressTo);
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = "Giriş Yapabilmek İçin Onay Kodunuz: " + x;
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
+
+            mimeMessage.Subject = "Doğrulama Kodu:";
+
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Connect("smtp.gmail.com", 587, false);
+            smtpClient.Authenticate("engokhangok@gmail.com", "ehhijhfqtwcgoaab");
+            smtpClient.Send(mimeMessage);
+            smtpClient.Disconnect(true);
         }
     }
 }
