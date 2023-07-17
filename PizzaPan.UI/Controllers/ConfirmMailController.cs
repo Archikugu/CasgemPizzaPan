@@ -17,8 +17,7 @@ namespace PizzaPan.UI.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var value = TempData["Username"];
-            ViewBag.username = value;
+            ViewBag.username = TempData["Username"];
             return View();
         }
         [HttpPost]

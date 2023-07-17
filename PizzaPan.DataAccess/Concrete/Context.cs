@@ -20,5 +20,6 @@ namespace PizzaPan.DataAccess.Concrete
         public DbSet<Product> Products { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Discount> Discounts { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
     }
 }

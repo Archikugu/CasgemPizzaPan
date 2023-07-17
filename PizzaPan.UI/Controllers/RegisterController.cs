@@ -32,7 +32,9 @@ namespace PizzaPan.UI.Controllers
                 Name = registerViewModel.Name,
                 Surname = registerViewModel.Surname,
                 Email = registerViewModel.Email,
-                UserName = registerViewModel.Username
+                UserName = registerViewModel.Username,
+                ConfirimCode = x
+
             };
             var result = await _userManager.CreateAsync(appUser, registerViewModel.Password);
             if (result.Succeeded)
