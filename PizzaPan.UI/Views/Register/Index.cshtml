@@ -2,69 +2,10 @@
 @{
     Layout = null;
 }
+
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kayıt Ol Sayfası</title>
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="~/colorlib-regform-9/fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="~/colorlib-regform-9/css/style.css">
-</head>
-<body>
-
-    <div class="main">
-
-        <div class="container">
-            <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
-                    <div class="form-group">
-                        <input type="text" class="form-input" asp-for="Name" placeholder="Adınız" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" asp-for="Surname" placeholder="Soyadınız" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" asp-for="Username" placeholder="Kullanıcı Adınız" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" asp-for="Email" placeholder="Email Adresiniz" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" asp-for="Password" id="password" placeholder="Şifreniz" />
-                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" asp-for="ConfirmPassword" id="confirmPassword" placeholder="Şifreniz Tekrar" />
-                        <span toggle="#confirmPassword" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="submit" id="submit" class="form-submit submit" value="Kayıt Ol" />
-                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- JS -->
-    <script src="~/colorlib-regform-9/vendor/jquery/jquery.min.js"></script>
-    <script src="~/colorlib-regform-9/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-</html>
-
-
-@* <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -76,56 +17,54 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Pizza Pan Kayıt Ol Sayfası</title>
 
     <!-- Icons font CSS-->
-    <link href="~/colorlib-regform-3/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="~/colorlib-regform-3/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/colorlib-regform-2/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="~/colorlib-regform-2/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="~/colorlib-regform-3/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="~/colorlib-regform-3/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="~/colorlib-regform-2/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/colorlib-regform-2/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="~/colorlib-regform-3/css/main.css" rel="stylesheet" media="all">
+    <link href="~/colorlib-regform-2/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w780">
-            <div class="card card-3">
+    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
-                    <form method="POST">
+                    <h2 class="title">Pizza Pan Kayıt Ol Sayfası</h2>
+
+                    <form method="POST" id="signup-form" class="signup-form">
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Name" name="name">
+                            <input type="text" class="form-control" asp-for="Name" placeholder="Adınız" />
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
-                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                            <input type="text" class="form-control" asp-for="Surname" placeholder="Soyadınız" />
                         </div>
                         <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected">Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
+                            <input type="text" class="form-control" asp-for="Username" placeholder="Kullanıcı Adınız" />
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="Email" name="email">
+                            <input type="email" class="form-control" asp-for="Email" placeholder="Email Adresiniz" />
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Phone" name="phone">
+                            <input type="text" class="form-control" asp-for="Password" id="password" placeholder="Şifreniz" autocomplete="new-password" />
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
-                        <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        <div class="input-group">
+                            <input type="text" class="form-control" asp-for="ConfirmPassword" id="confirmPassword" placeholder="Şifreniz Tekrar" autocomplete="new-password" />
+                            <span toggle="#confirmPassword" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="input-group">
+                            <input type="submit" name="submit" id="submit" class="btn btn--radius btn--green" value="Kayıt Ol" />
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                         </div>
                     </form>
                 </div>
@@ -134,16 +73,45 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="~/colorlib-regform-3/vendor/jquery/jquery.min.js"></script>
+    <script src="~/colorlib-regform-2/vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="~/colorlib-regform-3/vendor/select2/select2.min.js"></script>
-    <script src="~/colorlib-regform-3/vendor/datepicker/moment.min.js"></script>
-    <script src="~/colorlib-regform-3/vendor/datepicker/daterangepicker.js"></script>
+    <script src="~/colorlib-regform-2/vendor/select2/select2.min.js"></script>
+    <script src="~/colorlib-regform-2/vendor/datepicker/moment.min.js"></script>
+    <script src="~/colorlib-regform-2/vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="~/colorlib-regform-3/js/global.js"></script>
+    <script src="~/colorlib-regform-2/js/global.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".toggle-password").click(function () {
+                $(this).toggleClass("zmdi-eye zmdi-eye-off");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+        });
+    </script>
+    <style>
+        .input-group {
+            position: relative;
+        }
+
+        .field-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px; 
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
-<!-- end document--> *@
+<!-- end document-->
