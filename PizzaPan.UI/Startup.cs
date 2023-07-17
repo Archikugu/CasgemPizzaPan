@@ -10,6 +10,7 @@ using PizzaPan.DataAccess.Abstract;
 using PizzaPan.DataAccess.Concrete;
 using PizzaPan.DataAccess.EntityFramework;
 using PizzaPan.Entities.Concrete;
+using PizzaPan.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,8 @@ namespace PizzaPan.UI
             services.AddScoped<IDiscountService, DiscountManager>();
             services.AddScoped<IDiscountDal, EfDiscountDal>();
 
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+
 
             services.AddControllersWithViews();
 
