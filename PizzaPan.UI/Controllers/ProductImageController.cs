@@ -10,10 +10,12 @@ namespace PizzaPan.UI.Controllers
     public class ProductImageController : Controller
     {
         private readonly IProductImageService _productImageService;
+        private readonly IProductService _productService;
 
-        public ProductImageController(IProductImageService productImageService)
+        public ProductImageController(IProductImageService productImageService, IProductService productService)
         {
             _productImageService = productImageService;
+            _productService = productService;
         }
         [HttpGet]
         public IActionResult Index()
@@ -33,6 +35,11 @@ namespace PizzaPan.UI.Controllers
             productImage.ImageUrl = imageName;
             _productImageService.TInsert(productImage);
             return RedirectToAction("ImageList");
+        }
+        public IActionResult ImageList()
+        {
+            var values = _productService.TGetList();
+            return View(values);
         }
 
     }
