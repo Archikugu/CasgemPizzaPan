@@ -52,6 +52,9 @@ namespace PizzaPan.UI
             services.AddScoped<IOurTeamService, OurTeamManager>();
             services.AddScoped<IOurTeamDal, EfOurTeamDal>();
 
+            services.AddScoped<IGalleryService, GalleryManager>();
+            services.AddScoped<IGalleryDal, EfGalleryDal>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 
