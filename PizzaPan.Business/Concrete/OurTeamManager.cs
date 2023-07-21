@@ -13,6 +13,11 @@ namespace PizzaPan.Business.Concrete
     {
         private readonly IOurTeamDal _ourTeamDal;
 
+        public OurTeamManager(IOurTeamDal ourTeamDal)
+        {
+            _ourTeamDal = ourTeamDal;
+        }
+
         public void TInsert(OurTeam t)
         {
             _ourTeamDal.Insert(t);
