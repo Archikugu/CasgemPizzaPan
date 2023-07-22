@@ -9,15 +9,16 @@ Author URL: http://w3layouts.com
 <!doctype html>
 <html lang="en">
 
-@await Component.InvokeAsync("_HeadPartial")
+@await Html.PartialAsync("/Views/_PizzaPanPartial/_HeadPartial.cshtml")
 <body>
     <!--header-->
-    @await Component.InvokeAsync("_NavbarPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_NavbarPartial.cshtml")
     <!--/header-->
     <!-- Domain Modal -->
-    @await Component.InvokeAsync("_DomainPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_DomainPartial.cshtml")
+
     <!-- //Domain modal -->
-    @await Component.InvokeAsync("_FeaturePartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_FeaturePartial.cshtml")
 
     <!-- iphone home block -->
     <section class="w3l-about py-5">
@@ -69,7 +70,7 @@ Author URL: http://w3layouts.com
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda perferendis in
                         expedita hic sapiente! Aspernatur pariatur consequuntur suscipit placeat nemo!
                     </p>
-                    <a href="#url" class="btn-style btn-primary btn mt-lg-5 mt-4"><span class="fa fa-shopping-cart mr-2"></span> Order Online</a>
+                    <a href="#url" class="btn-style btn-primary btn mt-lg-5 mt-4"><span class="fa fa-shopping-cart mr-2"></span> Online Satış</a>
                 </div>
                 <div class="col-lg-4 col-md-6 align-self mt-md-0 mt-5">
                     <h3>Earn points every time you order online</h3>
@@ -86,17 +87,20 @@ Author URL: http://w3layouts.com
         </div>
     </section>
 
-    @await Component.InvokeAsync("_GalleryPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_GalleryPartial.cshtml")
 
-    @await Component.InvokeAsync("_ProductPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_ProductPartial.cshtml")
+   
 
     <!--/testimonials-->
-    @await Component.InvokeAsync("_TestimonialPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_TestimonialPartial.cshtml")
+   
     <!--//testimonials-->
     <!-- footers 20 -->
-    @await Component.InvokeAsync("_FooterPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_FooterPartial.cshtml")
     <!-- move top -->
-    @await Component.InvokeAsync("_ScriptPartial")
+    @await Html.PartialAsync("/Views/_PizzaPanPartial/_ScriptPartial.cshtml")
+
 
     @RenderBody()
 </body>
