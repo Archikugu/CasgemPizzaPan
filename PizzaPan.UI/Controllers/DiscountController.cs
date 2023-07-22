@@ -17,7 +17,9 @@ namespace PizzaPan.UI.Controllers
         [HttpGet]
         public IActionResult CreateCode()
         {
-            string[] symbols = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M" };
+            string[] symbols = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                    "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
             int c1, c2, c3, c4;
             Random rnd = new Random();
             c1 = rnd.Next(0, symbols.Length);
