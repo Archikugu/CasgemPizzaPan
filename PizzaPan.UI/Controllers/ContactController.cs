@@ -26,5 +26,11 @@ namespace PizzaPan.UI.Controllers
             _contactService.TInsert(context);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details()
+        {
+            var values = _contactService.TGetList();
+            return View(values);
+        }
     }
 }
